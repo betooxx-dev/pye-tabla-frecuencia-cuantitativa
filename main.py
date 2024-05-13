@@ -1,5 +1,6 @@
 import pandas as pd
 import math
+import matplotlib.pyplot as plt
 
 print("-----------------------------------")
 print("Generadora de Tablas de Frecuencia")
@@ -43,8 +44,8 @@ tabla_frecuencia = pd.DataFrame({
     'Frecuencia Relativa': frecuencia_relativa
 })
 
-print("-----------------------------------")
-print("\nResultados:")
+print("\n-----------------------------------")
+print("Resultados:")
 print(f"Valor Máximo: {maximo}")
 print(f"Valor Mínimo: {minimo}")
 print(f"Rango: {rango}")
@@ -52,7 +53,26 @@ print(f"Número de Clases: {k}")
 print(f"Amplitud de Clase: {amplitud}")
 print("-----------------------------------")
 
-print("-----------------------------------")
-print("\nTabla de Frecuencia:")
+print("\n-----------------------------------")
+print("Tabla de Frecuencia:")
 print(tabla_frecuencia)
 print("-----------------------------------")
+
+
+# Gráfica de barras
+plt.figure(figsize=(10, 6))
+plt.bar(tabla_frecuencia['Marca de Clase'], tabla_frecuencia['Frecuencia Absoluta'], width=amplitud, edgecolor='black')
+plt.title('Gráfica de Barras')
+plt.xlabel('Clase')
+plt.ylabel('Frecuencia Absoluta')
+plt.grid(axis='y')
+plt.show()
+
+# Histograma
+plt.figure(figsize=(10, 6))
+plt.hist(datos, bins=k, edgecolor='black')
+plt.title('Histograma')
+plt.xlabel('Clase')
+plt.ylabel('Frecuencia Absoluta')
+plt.grid(axis='y')
+plt.show()
