@@ -76,3 +76,10 @@ plt.xlabel('Clase')
 plt.ylabel('Frecuencia Absoluta')
 plt.grid(axis='y')
 plt.show()
+
+# Gráfica de pastel
+plt.figure(figsize=(8, 8))
+labels = [f"{marca} ({freq} %)" for marca, freq in zip(tabla_frecuencia['Marca de Clase'], tabla_frecuencia['Frecuencia Relativa'])]
+plt.pie(tabla_frecuencia['Frecuencia Relativa'], labels=labels, startangle=90, counterclock=False)
+plt.title('Gráfica de Pastel')
+plt.show()
