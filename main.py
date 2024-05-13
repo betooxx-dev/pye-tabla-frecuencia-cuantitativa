@@ -61,11 +61,11 @@ print("-----------------------------------")
 
 # Gráfica de barras
 plt.figure(figsize=(10, 6))
-plt.bar(tabla_frecuencia['Marca de Clase'], tabla_frecuencia['Frecuencia Absoluta'], width=amplitud, edgecolor='black')
+plt.barh(tabla_frecuencia['Marca de Clase'], tabla_frecuencia['Frecuencia Absoluta'], height=amplitud, edgecolor='black')
 plt.title('Gráfica de Barras')
-plt.xlabel('Clase')
-plt.ylabel('Frecuencia Absoluta')
-plt.grid(axis='y')
+plt.xlabel('Frecuencia Absoluta')
+plt.ylabel('Clase')
+plt.grid(axis='x')
 plt.show()
 
 # Histograma
